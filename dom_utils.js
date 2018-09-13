@@ -15,3 +15,7 @@ function get_epigram_node(post_node) {
     }
     return epigram_node;
 }
+
+function get_link(post_node) {
+    return get_title_node(post_node).getAttribute("href");
+}
