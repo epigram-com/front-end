@@ -1,4 +1,4 @@
-const SERVER = "";
+const SERVER = "localhost:8080";
 $(document).on('DOMNodeInserted', function(element) {
     var node = element.target;
     var post_nodes = $(node).find("div._29_4");
@@ -7,7 +7,7 @@ $(document).on('DOMNodeInserted', function(element) {
         if (z[0]) {
             var m = z[0].getElementsByClassName("_59tj _2iau");
             if (m.length) {
-                var post = z[0].getElementsByClassName("mbs");
+                var post = z[0].getElementsByClassName("mbs")[0];
                 console.log(post);
                 var link = get_link(post);
                 var http_query =  new XMLHttpRequest();
