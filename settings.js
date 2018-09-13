@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     var input = document.getElementById('ep-option');
 
-    chrome.storage.sync.set({epigram: false});
+
     chrome.storage.sync.get("epigram", function(data){
         if (data["epigram"]){
             input.checked = true;
