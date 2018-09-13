@@ -3,7 +3,8 @@
   "name": "epigram",
   "version": "1.0",
   "description": "blocking the click bait for you by providing the answer",
-  "permissions":["tabs","storage","https://www.facebook.com/*","http://www.facebook.com/*","background"],
+  "permissions":["tabs","storage","https://www.facebook.com/*","http://www.facebook.com/*",
+    "background","http://localhost:8081/*","https://localhost:8081/*"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
@@ -13,5 +14,13 @@
     "32": "icons/epigram_icon_32.png",
     "48": "icons/epigram_icon_48.png",
     "128": "icons/epigram_icon_128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/epigram_icon_16.png",
+      "32": "icons/epigram_icon_32.png"
+    },
+    "default_title": "epigram",
+    "default_popup": "popup.html"
   }
 }

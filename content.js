@@ -1,7 +1,5 @@
 let HTTP_SERVER = "http://localhost:8081/";
-
-$(document).on('DOMNodeInserted', function(element) {
-    var node = element.target;
+function main(node) {
     var post_nodes = $(node).find("div._29_4").filter("._3ekx").find("._3n1k").find(".mbs");
     var queries = {};
     for (i = 0; i < post_nodes.length; i++) {
@@ -12,7 +10,7 @@ $(document).on('DOMNodeInserted', function(element) {
     for (j = 0; j < post_nodes.length; j++) {
         var current_post = post_nodes[j];
         queries[j].onreadystatechange =
-                get_callback_for_http(current_post);
+            get_callback_for_http(current_post);
     }
 
     for (k = 0; k < post_nodes.length; k++) {
@@ -20,6 +18,14 @@ $(document).on('DOMNodeInserted', function(element) {
         queries[k].open("GET",HTTP_SERVER + "?link=" + link,true);
         queries[k].send();
     }
+}
+
+$(document).each(function() {
+    main(this);
+});
+
+$(document).on('DOMNodeInserted', function(event) {
+    main(event.target);
 });
 // chrome.storage.sync.set({ link : link ,post : mbs}, function() {
 //     console.log('Value is set to ' + mbs);
