@@ -1,4 +1,4 @@
-const SERVER = "localhost:8080";
+const HTTP_SERVER = "localhost:8080";
 $(document).on('DOMNodeInserted', function(element) {
     var node = element.target;
     var post_nodes = $(node).find("div._29_4");
@@ -12,9 +12,11 @@ $(document).on('DOMNodeInserted', function(element) {
                 var link = get_link(post);
                 var http_query =  new XMLHttpRequest();
                 http_query.onreadystatechange = function(){
-                    append_answer_to_post(post, this.responseText);
+                    if (this.readyState == 4 && this.status == 200) {
+                        append_answer_to_post(post, this.responseText);
+                    }
                 };
-                http_query.open("GET",SERVER + "?link=" + link,true);
+                http_query.open("GET",HTTP_SERVER + "?link=" + link,true);
                 http_query.send();
 
             }

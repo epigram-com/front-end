@@ -12,8 +12,9 @@ function get_epigram_node(post_node) {
         epigram_node = document.createElement("a");
         epigram_node.className = "epigram";
         post_node.append(epigram_node);
+    } else {
+        var epigram_node = epigram_nodes[0];
     }
-    var epigram_node = epigram_nodes[0];
     return epigram_node;
 }
 
