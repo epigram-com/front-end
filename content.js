@@ -1,4 +1,4 @@
-const HTTP_SERVER = "localhost:8080";
+let HTTP_SERVER = "localhost:8080";
 $(document).on('DOMNodeInserted', function(element) {
     var node = element.target;
     var post_nodes = $(node).find("div._29_4");
