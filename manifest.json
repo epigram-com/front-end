@@ -3,7 +3,7 @@
   "name": "epigram",
   "version": "1.0",
   "description": "blocking the click bait for you by providing the answer",
-  "permissions":["tabs","https://www.facebook.com/*","http://www.facebook.com/*","background"],
+  "permissions":["tabs","storage","https://www.facebook.com/*","http://www.facebook.com/*","background"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
