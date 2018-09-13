@@ -1,5 +1,6 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
 $(document).on('DOMNodeInserted', function(elt) {
+    console.log(elt.className);
     if(elt.className == "_3ekx _29_4"){
         var z = elt.childNodes;
         if(z[0]) {
@@ -12,3 +13,15 @@ $(document).on('DOMNodeInserted', function(elt) {
         }
     }
 });
+// var elements = document.getElementsByClassName("_3ekx _29_4");
+// for(elt of elements){
+//     var z = elt.childNodes;
+//     if(z[0]) {
+//         var m = z[0].getElementsByClassName("_59tj _2iau");
+//         if (m.length) {
+//             var child = elt.querySelector("a");
+//             var y = child.getAttribute("href");
+//             console.log(y.toString());
+//         }
+//     }
+// }
